@@ -2,7 +2,7 @@ require "open-uri"
 require "nokogiri"
 require "pry"
 
-require "lol_champion_stats/version"
+require_relative "lol_champion_stats/version"
 
 
 module LolChampionStats

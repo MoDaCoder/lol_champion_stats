@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/lol_champion_stats"
+require_relative "../lib/lol_champion_stats.rb"
+
+puts "hello"
