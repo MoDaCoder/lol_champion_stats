@@ -20,7 +20,6 @@ class LolChampionStats::CLI
   end
 
   def champion_select
-    puts ""
     input = nil
     while input != "exit"
       puts "Enter the number of the champ you would like to view or type list to start over or type exit to leave:"
@@ -33,12 +32,14 @@ class LolChampionStats::CLI
     when "list"
       list_champions
     else
-      puts "!DO NOT BELIEVE THIS IS A GAME SUMMONER! Type list or exit."
+      puts "!DO NOT BELIEVE THIS IS A GAME SUMMONER! Type list to continue or leave."
     end
   end
 end
 
   def farewell
+    puts ""
+    puts "I see you have made your decision."
     puts ""
     puts "Farewell until the next battle summoner."
   end
