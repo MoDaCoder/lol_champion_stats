@@ -6,7 +6,7 @@ require_relative "./lol_champion_stats/version"
 require_relative "./lol_champion_stats/cli"
 require_relative "./lol_champion_stats/scraper"
 
-module LolChampionStats
-  class Error < StandardError; end
-  # Your code goes here...
-end
+# module LolChampionStats
+#   class Error < StandardError; end
+#   # Your code goes here...
+# end

@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
-
 require_relative "../lib/environment"
 
-cli = CLI.new
-cli.run
+LolChampionStats::CLI.new.summon
+
+# cli = CLI.new
+# cli.run
