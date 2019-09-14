@@ -2,6 +2,3 @@
 require_relative "../lib/environment"
 
 LolChampionStats::CLI.new.summon
-
-# cli = CLI.new
-# cli.run

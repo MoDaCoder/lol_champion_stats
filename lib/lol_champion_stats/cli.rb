@@ -14,9 +14,10 @@ class LolChampionStats::CLI
   end
 
   def list_champions
-    puts ""
-    puts "1. Aatrox"
-    puts "2. Annie"
+    # puts ""
+    # puts "1. Aatrox"
+    # puts "2. Annie"
+    @champions = LolChampionStats::Summoner.champion 
   end
 
   def champion_select
