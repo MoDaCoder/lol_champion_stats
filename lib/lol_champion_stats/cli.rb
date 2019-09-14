@@ -9,16 +9,37 @@ class LolChampionStats::CLI
     puts "Choose one to view their strengths and their weaknesses."
     list_champions
     champion_select
+    farewell
     Scraper.scrape_champion_stats
   end
 
   def list_champions
     puts ""
     puts "1. Aatrox"
+    puts "2. Annie"
   end
 
   def champion_select
     puts ""
-    puts "Enter the number of the champ you would like to view:"
+    input = nil
+    while input != "exit"
+      puts "Enter the number of the champ you would like to view or type list to start over or type exit to leave:"
+      input = gets.strip.downcase
+    case input
+    when "1"
+      puts "Info on Champion 1."
+    when "2"
+      puts "Info on Champion 2."
+    when "list"
+      list_champions
+    else
+      puts "!DO NOT BELIEVE THIS IS A GAME SUMMONER! Type list or exit."
+    end
+  end
+end
+
+  def farewell
+    puts ""
+    puts "Farewell until the next battle summoner."
   end
 end
