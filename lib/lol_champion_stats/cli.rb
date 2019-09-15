@@ -6,7 +6,6 @@ class LolChampionStats::CLI
     puts ""
     puts "Who shall you choose to be your Champion in the battle for the Rift?"
     puts ""
-    puts "Choose one to view their strengths and their weaknesses."
     list_champions
     champion_select
     farewell
@@ -17,21 +16,26 @@ class LolChampionStats::CLI
     # puts ""
     # puts "1. Aatrox"
     # puts "2. Annie"
-    @champions = LolChampionStats::Summoner.champion 
+    puts "Choose one to view their role in the Rift."
+    @champions = LolChampionStats::Summoner.champion
   end
 
   def champion_select
     input = nil
+    puts "Enter the number of the champ you would like to view or type list to start over or type exit to leave:"
     while input != "exit"
-      puts "Enter the number of the champ you would like to view or type list to start over or type exit to leave:"
       input = gets.strip.downcase
+      #
+      # if input.to_i > 0
+      #   puts @champions[input.to_i-1]
+      # elsif input == "list"
+      #   list_champions
     case input
     when "1"
       puts "Info on Champion 1."
     when "2"
       puts "Info on Champion 2."
     when "list"
-      list_champions
     else
       puts "!DO NOT BELIEVE THIS IS A GAME SUMMONER! Type list to continue or leave."
     end
