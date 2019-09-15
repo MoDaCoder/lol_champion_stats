@@ -1,25 +1,26 @@
-require "pry"
-class Scraper
-
-  BASE_URL = "https://na.op.gg"
-
-  def self.scrape_champion_stats
-     index_page = BASE_URL + "/champion/statistics"
-
-     doc = Nokogiri::HTML(open("https://na.op.gg/champion/statistics"))
-
-
-    #  binding.pry
-  end
-
-end
-
-
-require "nokogiri"
-require "open-uri"
+# require "pry"
+# class Scraper
+#
+#   BASE_URL = "https://na.op.gg"
+#
+#   def self.scrape_champion_stats
+#      index_page = BASE_URL + "/champion/statistics"
+#
+#      doc = Nokogiri::HTML(open("https://na.op.gg/champion/statistics"))
+#
+#
+#     #  binding.pry
+#   end
+#
+# end
+#
+#
+# require "nokogiri"
+# require "open-uri"
 
 # # doc= Nokogiri::HTML(open("https://na.op.gg/champion/statistics"))
 # champions_arr = doc.css(".champion-index__champion-list").css(".champion-index__champion-item")
+# binding.pry
 # # should be able to iterate through and grab needed info
 # # gets champion from array
 # first_champ = champions_arr[0..144]
