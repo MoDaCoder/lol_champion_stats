@@ -17,7 +17,7 @@ class LolChampionStats::CLI
     # puts "1. Aatrox"
     # puts "2. Annie"
     puts "Choose one to view their role in the Rift."
-    @champion = LolChampionStats::Summoner.champion
+    @champion = LolChampionStats::Scraper.scrape_champion_stats
     @champion.each.with_index(1) do |champion, i|
       puts "#{i}. #{champion.name} - #{champion.role}"
     end
