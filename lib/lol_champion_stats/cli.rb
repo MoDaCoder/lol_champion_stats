@@ -18,6 +18,9 @@ class LolChampionStats::CLI
     # puts "2. Annie"
     puts "Choose one to view their role in the Rift."
     @champion = LolChampionStats::Summoner.champion
+    @champion.each.with_index(1) do |champion, i|
+      puts "#{i}. #{champion.name} - #{champion.role}"
+    end
   end
 
   def champion_select
