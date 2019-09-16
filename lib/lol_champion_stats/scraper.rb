@@ -1,5 +1,5 @@
 require "pry"
-class LolChampionStats::Scraper
+class Scraper
   attr_accessor :name, :role
 
   BASE_URL = "https://na.op.gg"
@@ -11,11 +11,15 @@ class LolChampionStats::Scraper
 
      doc.css(".champion-index__champion-list").css(".champion-index__champion-item").each do |champion_css|
        name = champion_css.css(".champion-index__champion-item__name").text
+
        role = champion_css.css(".champion-index__champion-item__position").map{|position| position.text}
 
-     binding.pry
+          Champions.new(name, role)
+     end
+
   end
- end
+
+
 end
 
 require "nokogiri"

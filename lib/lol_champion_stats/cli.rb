@@ -1,49 +1,42 @@
-#Our Cli Controller
-class LolChampionStats::CLI
-
+require "pry"
+class CLI
+  attr_accessor :name, :role
   def summon
     puts "Welcome Summoner to The League of Legends!"
     puts ""
+    sleep 2
     puts "Who shall you choose to be your Champion in the battle for the Rift?"
     puts ""
-    list_champions
-    champion_select
-    farewell
+    sleep 4
     Scraper.scrape_champion_stats
-  end
-
-  def list_champions
-    # puts ""
-    # puts "1. Aatrox"
-    # puts "2. Annie"
-    puts "Choose one to view their role in the Rift."
-    @champion = LolChampionStats::Scraper.scrape_champion_stats
-    @champion.each.with_index(1) do |champion, i|
-      puts "#{i}. #{champion.name} - #{champion.role}"
-    end
+    champion_select
+    # farewell
+    # binding.pry
   end
 
   def champion_select
-    input = nil
-    puts "Enter the number of the champ you would like to view or type list to start over or type exit to leave:"
-    while input != "exit"
-      input = gets.strip.downcase
+    Champions.all.each_with_index do |champion, index|
+      puts "#{index + 1}. #{champion.name}"
+      end
+      sleep 3
+      puts "Choose your champion summoner by number to learn it's role."
+      input = gets.chomp
+      if input.to_i > Champions.all.size
+        puts "DO NOT BELIEVE THIS IS A GAME SUMMONER. Please try again."
+        champion_select
+      end
 
-      if input.to_i > 0
-        puts @champion[input.to_i-1]
-      elsif input == "list"
-        list_champions
-
-    else
-      puts "!DO NOT BELIEVE THIS IS A GAME SUMMONER! Type list to continue or exit to leave."
+      champion = Champions.all[input.to_i - 1]
+      puts "You now summoned #{champion.name}!!!"
+      puts champion.role
+      sleep 3 
+      champion_select
     end
-  end
 end
-
-  def farewell
-    puts ""
-    puts "I see you have made your decision."
-    puts ""
-    puts "Farewell until the next battle summoner."
-  end
-end
+#   def farewell
+#     puts ""
+#     puts "I see you have made your decision."
+#     puts ""
+#     puts "Farewell until the next battle summoner."
+#   end
+# end

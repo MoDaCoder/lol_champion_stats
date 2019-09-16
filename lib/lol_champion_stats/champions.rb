@@ -1,4 +1,4 @@
-class LolChampionStats::Champions
+class Champions
   attr_accessor :name, :role
 
 
