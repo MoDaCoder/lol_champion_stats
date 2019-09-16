@@ -1,5 +1,6 @@
 require "open-uri"
 require "nokogiri"
+require "colorize"
 require "pry"
 
 require_relative "./lol_champion_stats/version"
