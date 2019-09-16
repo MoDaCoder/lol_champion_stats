@@ -1,8 +1,6 @@
 # LolChampionStats
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lol_champion_stats`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby gem for choosing a league of legends(lol) champion out of 145 and viewing what role they most commonly play in the game.
 
 ## Installation
 
@@ -10,6 +8,10 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'lol_champion_stats'
+gem 'open-uri'
+gem 'nokogiri'
+gem 'colorize'
+gem 'pry'
 ```
 
 And then execute:
@@ -22,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+require lol_champion_stats
 
 ## Development
 
