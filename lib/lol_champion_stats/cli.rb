@@ -1,36 +1,6 @@
 class CLI
   attr_accessor :name, :role
   def summon
-    puts "!!!!WELCOME SUMMONER TO LEAGUE OF WUMPASSSS!!!!"
-    puts ""
-    sleep 2.7
-    puts "?!!WILL YOU BE THE ONE TO SUMMON THE GREAT WUMPA IN THE SKY!!?"
-    puts ""
-    sleep 3
-    puts "wait a second..."
-    puts ""
-    sleep 3
-    puts ".."
-    puts ""
-    sleep 2
-    puts "............"
-    puts ""
-    sleep 3
-    puts "................................................................................................................................"
-    puts ""
-    sleep 5
-    puts "HEY!!! THAT'S NOT THE RIGHT GAME!"
-    puts""
-    sleep 2
-    puts "MOOOM TELL JIMMY TO STOP MESSING WITH MY COMMAND LINE INTERFACE!!!"
-    puts ""
-    sleep 3
-    puts "Anyways... Where was I?"
-    puts ""
-    sleep 2
-    puts "oh right."
-    puts ""
-    sleep 2
     puts "Welcome Summoner to The League of Legends!".light_blue.bold
     puts ""
     sleep 2
