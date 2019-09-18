@@ -18,13 +18,13 @@ class CLI
       sleep 0.009
       end
       sleep 0.3
-      puts "Choose your champion summoner by number to learn it's role.".yellow.bold
+      puts "Choose your champion summoner by number to learn it's role or exit to leave.".yellow.bold
       # while input = gets.chomp != "exit" I NEED AN EXIT BUTTON
       input = gets.chomp
       if input == "exit"
         farewell
       elsif input.to_i > Champions.all.size || input.to_i <= 0
-        puts "DO NOT BELIEVE THIS IS A GAME SUMMONER. Please try again.".red.bold
+        puts "DO NOT BELIEVE THIS IS A GAME SUMMONER. Try again or type exit.".red.bold
         sleep 3
 
       end
@@ -44,8 +44,9 @@ class CLI
     puts ""
     puts "Very well.".yellow
     puts ""
+    sleep 0.5
     puts "Farewell until the next battle then summoner.".blue
     sleep 1
-    exit 
+    exit
   end
 end
