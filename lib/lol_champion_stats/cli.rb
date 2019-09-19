@@ -1,5 +1,4 @@
 class CLI
-  attr_accessor :name, :role
   def summon
     puts "Welcome Summoner to The League of Legends!".light_blue.bold
     puts ""
@@ -19,14 +18,13 @@ class CLI
       end
       sleep 0.3
       puts "Choose your champion summoner by number to learn it's role or exit to leave.".yellow.bold
-      # while input = gets.chomp != "exit" I NEED AN EXIT BUTTON
       input = gets.chomp
       if input == "exit"
         farewell
       elsif input.to_i > Champions.all.size || input.to_i <= 0
         puts "DO NOT BELIEVE THIS IS A GAME SUMMONER. Try again or type exit.".red.bold
         sleep 3
-
+        champion_select
       end
       champion = Champions.all[input.to_i - 1]
       puts "!!!You now summoned #{champion.name}!!!".light_blue.bold
