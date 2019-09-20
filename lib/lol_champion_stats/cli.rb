@@ -7,30 +7,44 @@ class CLI
     puts ""
     sleep 4
     Scraper.scrape_champion_stats
+    print_list
     champion_select
     farewell
   end
 
   def champion_select
-    Champions.all.each_with_index do |champion, index|
-      puts "#{index + 1}. #{champion.name}".green
-      sleep 0.009
-      end
-      sleep 0.3
-      puts "Choose your champion summoner by number to learn it's role or exit to leave.".yellow.bold
+      puts "Choose your champion summoner by number to learn it's role or type list to view all champions again or exit to leave.".yellow.bold
+      puts " "
       input = gets.chomp
       if input == "exit"
         farewell
-      elsif input.to_i > Champions.all.size || input.to_i <= 0
+      elsif input == "list"
+        print_list
+        champion_select
+      elsif input.to_i - 1 <= Champions.all.size - 1 && input.to_i - 1 >= 0
+        champion = Champions.all[input.to_i - 1]
+        puts "!!!You now summoned #{champion.name}!!!".light_blue.bold
+        puts "ROLES:"
+        champion.role.each do |r|
+          puts "   #{r}".yellow
+        end
+        puts " "
+        sleep 6
+        champion_select
+      else
         puts "DO NOT BELIEVE THIS IS A GAME SUMMONER. Try again or type exit.".red.bold
+        puts " "
         sleep 3
         champion_select
       end
-      champion = Champions.all[input.to_i - 1]
-      puts "!!!You now summoned #{champion.name}!!!".light_blue.bold
-      puts "#{champion.role}".yellow
-      sleep 6
-      champion_select
+    end
+
+    def print_list
+      Champions.all.each_with_index do |champion, index|
+        puts "#{index + 1}. #{champion.name}".green
+        sleep 0.009
+      end
+      puts " "
     end
 
   def farewell
