@@ -1,0 +1,36 @@
+PATH
+  remote: .
+  specs:
+    lol_champion_stats (0.1.0)
+      rake (>= 12.3.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.3)
+    colorize (0.8.1)
+    method_source (1.0.0)
+    mini_portile2 (2.5.0)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    open-uri (0.1.0)
+    pry (0.14.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    racc (1.5.2)
+    rake (13.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 2.0)
+  colorize
+  lol_champion_stats!
+  nokogiri
+  open-uri
+  pry
+
+BUNDLED WITH
+   2.1.4
